@@ -1,0 +1,11 @@
+language: java
+jdk:
+ - oraclejdk8
+services:
+ - docker
+cache:
+ - $HOME/.m2
+install:
+ - docker pull mongo
+script:
+ - mvn -f wabri.SchoolController/pom.xml clean verify
