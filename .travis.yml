@@ -1,0 +1,12 @@
+language: java
+jdk:
+  - oraclejdk8
+services:
+  - docker
+cache:
+  directories:
+  - $HOME/.m2
+install:
+ - docker pull mongo
+script:
+ - mvn -f SchoolController/pom.xml clean verify
