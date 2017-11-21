@@ -32,4 +32,9 @@ public class MongoDatabaseWrapper implements Database {
 		return students.findOne("{id:#}", id).as(Student.class);
 	}
 
+	@Override
+	public void save(Student student) {
+		students.save(student);
+	}
+
 }

@@ -23,4 +23,11 @@ public class MongoTestHelper {
 		students.insert(document);
 	}
 
+	public boolean containsStudent(String id, String name) {
+		BasicDBObject query = new BasicDBObject();
+		query.put("id", id);
+		query.put("name", name);
+		return students.find(query).hasNext();
+	}
+
 }
