@@ -9,4 +9,4 @@ cache:
 install:
  - docker pull mongo
 script:
- - mvn -f wabri.SchoolController/pom.xml clean verify
+ - mvn -f SchoolController/pom.xml clean verify
