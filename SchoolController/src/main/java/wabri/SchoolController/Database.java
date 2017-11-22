@@ -8,4 +8,6 @@ public interface Database {
 
 	public Student findStudentById(String id);
 
+	public void save(Student student);
+
 }

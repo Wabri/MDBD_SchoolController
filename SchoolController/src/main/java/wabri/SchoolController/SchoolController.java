@@ -17,4 +17,12 @@ public class SchoolController {
 		return database.findStudentById(id);
 	}
 
+	public boolean addStudent(Student student) {
+		if (getStudentById(student.getId()) != null)
+			return false;
+
+		database.save(student);
+		return true;
+	}
+
 }

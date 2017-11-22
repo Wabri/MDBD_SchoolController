@@ -17,7 +17,7 @@ import wabri.SchoolController.helper.MongoTestHelper;
 import wabri.SchoolController.mongo.MongoDatabaseWrapper;
 
 public abstract class AbstractMongoDatabaseWrapperTest {
-	
+
 	private MongoDatabaseWrapper mongoDatabase;
 
 	public abstract MongoClient createMongoClient() throws UnknownHostException;
@@ -57,6 +57,12 @@ public abstract class AbstractMongoDatabaseWrapperTest {
 		assertNotNull(findStudentById);
 		assertEquals("2", findStudentById.getId());
 		assertEquals("second", findStudentById.getName());
+	}
+
+	@Test
+	public void testStudentIsSaved() {
+		mongoDatabase.save(new Student("1", "test"));
+		assertTrue(mongoTestHelper.containsStudent("1", "test"));
 	}
 
 }
