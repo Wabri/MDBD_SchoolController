@@ -3,7 +3,7 @@ FROM openjdk:8
 
 ARG fatjar
 
-COPY /maven/$fatjar /app/app.jar
+COPY /target/SchoolController-0.0.1-SNAPSHOT-all.jar /app/app.jar
 
 WORKDIR /app
 
