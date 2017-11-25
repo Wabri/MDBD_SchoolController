@@ -3,8 +3,8 @@ FROM openjdk:8
 
 ARG fatjar
 
-COPY /target/SchoolController-0.0.1-SNAPSHOT-all.jar /app/app.jar
+COPY /target/SchoolController-0.0.1-SNAPSHOT-all.jar /app.jar
 
-WORKDIR /app
+WORKDIR /
 
 CMD ["java", "-jar", "app.jar", "mongo-host"]
